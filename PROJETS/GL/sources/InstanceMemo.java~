@@ -1,0 +1,24 @@
+public class InstanceMemo {
+    public static int number = 0;
+    public InstanceMemo[] tab = new InstanceMemo[255];
+    public int num;
+
+    public InstanceMemo()
+    {
+	num = ++number;
+	tab[num] = this;
+    }
+
+    public int nombreInstances()
+    {
+	return number;
+    }
+
+    public afficherInstances()
+    {
+	for(int i = 0; i < tab.length; i++)
+	    {
+		System.out.println("Je suis l'instance numéro " + tab[i]);
+	    }
+    }
+}

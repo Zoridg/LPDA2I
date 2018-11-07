@@ -1,0 +1,12 @@
+ #!/bin/bash
+
+set -x
+echo "Entrez oui ou non"
+read reponse
+
+while test "$reponse" != "oui" -a "$reponse" != "non"
+do echo "Pas bon"
+	echo "Entrez oui ou non"
+	read reponse
+done
+

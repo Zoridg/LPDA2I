@@ -1,0 +1,59 @@
+Exo 1
+
+Q1
+1. cd tpfs/a-faire
+2. /home/infoetu/bergamin/Documents/Projets/TP1_SYS/systeme/tpfs/a-faire
+3. ../fait/Algo
+4. ./fait/Gestion
+
+Q4
+
+bergamin@meleze26:~/Documents/Projets/TP1_SYS/systeme/tpfs/a-faire$ ls -li
+total 0
+150740028 -rw-r--r-- 1 bergamin infoetu 0 sept. 12 16:30 Algo
+150740036 -rw-r--r-- 1 bergamin infoetu 0 sept. 12 16:30 Anglais
+150740037 -rw-r--r-- 1 bergamin infoetu 0 sept. 12 16:30 Math
+
+Q5 
+
+  Fichier : Algo
+   Taille : 0         	Blocs : 0          Blocs d'E/S : 1048576 fichier vide
+Périphérique : 29h/41d	Inœud : 150740028   Liens : 1
+Accès : (0644/-rw-r--r--)  UID : ( 2063/bergamin)   GID : ( 1005/ infoetu)
+ Accès : 2018-09-12 16:30:31.968955418 +0200
+Modif. : 2018-09-12 16:30:31.968955418 +0200
+Changt : 2018-09-12 16:30:31.968955418 +0200
+
+  Fichier : Anglais
+   Taille : 0         	Blocs : 0          Blocs d'E/S : 1048576 fichier vide
+Périphérique : 29h/41d	Inœud : 150740036   Liens : 1
+Accès : (0644/-rw-r--r--)  UID : ( 2063/bergamin)   GID : ( 1005/ infoetu)
+ Accès : 2018-09-12 16:30:31.972955425 +0200
+Modif. : 2018-09-12 16:30:31.972955425 +0200
+Changt : 2018-09-12 16:30:31.972955425 +0200
+
+  Fichier : Math
+   Taille : 0         	Blocs : 0          Blocs d'E/S : 1048576 fichier vide
+Périphérique : 29h/41d	Inœud : 150740037   Liens : 1
+Accès : (0644/-rw-r--r--)  UID : ( 2063/bergamin)   GID : ( 1005/ infoetu)
+ Accès : 2018-09-12 16:30:31.972955425 +0200
+Modif. : 2018-09-12 16:30:31.972955425 +0200
+Changt : 2018-09-12 16:30:31.972955425 +0200
+
+Q8
+2. mv Algo2 ../fait/Algo 
+3. mv Anglais English
+4. mv English ../fait
+5. ln Math Abandon
+6. cat Math
+7. ln -s Abandon Persevere
+8. cat Persevere
+9. rm -rf Abandon
+10. cat Persevere
+11. cat Math
+12. mkdir plustard
+
+Exo 2
+
+
+

@@ -1,0 +1,24 @@
+#!/bin/bash
+
+nb=$(cat $1 | wc -l)
+res=""
+remp=0
+for i in $(seq 1 $nb); do 
+	ligne=$(cat $1 | head -n $i | tail -1)
+	
+	if [ "$ligne" == "--DEBUT_REMPLACEMENT--" ];then
+		remp=1
+	fi
+	if [ "$ligne" == "--FIN_REMPLACEMENT--" ]; then
+		remp=0
+	fi 
+	if [ "$remp" -ne 1 ]; then 
+		if [ "$ligne" == "--FIN_REMPLACEMENT--" ];then
+			remp=0	
+		else	
+			echo -e $ligne"\n"
+		fi
+	else
+		cat
+	fi
+done

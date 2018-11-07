@@ -1,0 +1,19 @@
+#!/bin/bash
+
+a=6
+b=366
+n=367
+
+r=1
+s="$a"
+k="$b"
+
+while [ $k -eq 0 ]
+do
+	if [ $((k%2)) -eq 1 ]; then 
+		r=$(($r*$s)%$n)
+	fi
+	s= $((s**2)%$n)
+	k= $(k%2)
+done
+echo $r

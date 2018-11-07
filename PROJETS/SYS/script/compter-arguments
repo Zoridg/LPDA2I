@@ -1,0 +1,10 @@
+#!/bin/bash
+
+cpt=1
+
+for param in $*
+do
+	echo "l'argument $cpt est $param"
+	cpt=$(($cpt + 1))
+done
+

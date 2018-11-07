@@ -1,0 +1,45 @@
+#! /bin/bash
+
+res='<DOCTYPE html>\n<html>\n<table style=\"width:100%\ border=\"1\">"\n'
+cpt=0
+IFS=' '
+
+if test $# > 0
+then
+    case $1 in
+	"-d")
+	    IFS=$2
+        reponse=$(tableau)
+	    ;;
+	"-s")
+	    tableau 	
+	    ;;
+	"-S")
+	    echo ok
+	    ;;
+    esac   
+fi
+
+function tableau(){
+	while read line 
+	do
+		res="$res \t<tr>\n"
+
+		for i in $line
+		do 
+			if [ $cpt -eq 0 ]  
+			then
+				res="$res \t\t<th>$i</th>\n"
+			else
+				res="$res \t\t<td>$i</td>\n"
+			fi
+		done
+		cpt=1
+		res="$res \t</tr>\n"
+	done
+	res="$res</table>\n</html>"
+	return $res
+}
+
+
+

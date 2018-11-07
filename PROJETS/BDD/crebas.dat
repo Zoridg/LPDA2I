@@ -1,0 +1,99 @@
+/*==============================================================*/
+/* Nom de SGBD :  Microsoft Access 2000                         */
+/* Date de création :  12/09/2018 10:14:02                      */
+/*==============================================================*/
+
+
+alter table PERSONNEL
+   drop constraint FK_PERSONNE_POSSEDE_STATUT;
+
+alter table RAYON
+   drop constraint FK_RAYON_APPARTIEN_SECTEUR;
+
+alter table TRAVAILLE
+   drop constraint FK_TRAVAILL_TRAVAILLE_PERSONNE;
+
+alter table TRAVAILLE
+   drop constraint FK_TRAVAILL_TRAVAILLE_RAYON;
+
+drop table PERSONNEL;
+
+drop table RAYON;
+
+drop table SECTEUR;
+
+drop table STATUT;
+
+drop table TRAVAILLE;
+
+/*==============================================================*/
+/* Table : PERSONNEL                                            */
+/*==============================================================*/
+create table PERSONNEL
+(
+    IDM                  INTEGER         not null,
+    IDSTAT               INTEGER         not null,
+    NOM                  NOTE,
+    PRENOM               NOTE,
+    AGE                  INTEGER,
+constraint PK_PERSONNEL primary key (IDM)
+);
+
+/*==============================================================*/
+/* Table : RAYON                                                */
+/*==============================================================*/
+create table RAYON
+(
+    IDRAYON              INTEGER         not null,
+    IDSECTEUR            INTEGER         not null,
+    LIBELLE              NOTE,
+constraint PK_RAYON primary key (IDRAYON)
+);
+
+/*==============================================================*/
+/* Table : SECTEUR                                              */
+/*==============================================================*/
+create table SECTEUR
+(
+    IDSECTEUR            INTEGER         not null,
+    LIBELLE              NOTE,
+constraint PK_SECTEUR primary key (IDSECTEUR)
+);
+
+/*==============================================================*/
+/* Table : STATUT                                               */
+/*==============================================================*/
+create table STATUT
+(
+    IDSTAT               INTEGER         not null,
+    LIBELLE              NOTE,
+constraint PK_STATUT primary key (IDSTAT)
+);
+
+/*==============================================================*/
+/* Table : TRAVAILLE                                            */
+/*==============================================================*/
+create table TRAVAILLE
+(
+    IDM                  INTEGER         not null,
+    IDRAYON              INTEGER         not null,
+    TEMPS_PASSE          INTEGER,
+constraint PK_TRAVAILLE primary key (IDM, IDRAYON)
+);
+
+alter table PERSONNEL
+   add constraint FK_PERSONNE_POSSEDE_STATUT foreign key (IDSTAT)
+      references STATUT (IDSTAT);
+
+alter table RAYON
+   add constraint FK_RAYON_APPARTIEN_SECTEUR foreign key (IDSECTEUR)
+      references SECTEUR (IDSECTEUR);
+
+alter table TRAVAILLE
+   add constraint FK_TRAVAILL_TRAVAILLE_PERSONNE foreign key (IDM)
+      references PERSONNEL (IDM);
+
+alter table TRAVAILLE
+   add constraint FK_TRAVAILL_TRAVAILLE_RAYON foreign key (IDRAYON)
+      references RAYON (IDRAYON);
+

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -x
+reponse=""
+
+while test "$reponse" != "FINI"
+do echo "Entrez le nom dune variable"
+	read reponse
+	eval echo \$$reponse
+done

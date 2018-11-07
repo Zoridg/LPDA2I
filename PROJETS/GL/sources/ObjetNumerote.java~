@@ -1,0 +1,23 @@
+/** Classe ObjetNumerote */
+public class ObjetNumerote
+{
+    /** attribut itérateur */
+    public static int num = 0;
+    public int numero;
+
+    /** Constructeur */
+    public ObjetNumerote()
+    {
+	this.numero = num;
+	this.num = num + 1;
+	System.out.println("Objet " + num);
+    }
+
+    public static void main(String [] arg)
+    {
+	ObjetNumerote obj1 = new ObjetNumerote();
+	ObjetNumerote obj2 = new ObjetNumerote();
+	ObjetNumerote obj3 = new ObjetNumerote();
+    }
+
+    
