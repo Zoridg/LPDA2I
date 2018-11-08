@@ -13,7 +13,7 @@ public enum Operation {
     }
 
     Operation(){
-        this.code_operation = "";
+        this.code_operation = code();
         this.arite = 0;
     }
 
@@ -28,6 +28,25 @@ public enum Operation {
 
     public int getArite() {
         return arite;
+    }
+
+    public String code(){
+        String result = "";
+        switch(this){
+            case DROP:
+                result = "DROP";
+                break;
+            case DUP:
+                result = "DUP";
+                break;
+            case SWAP:
+                result = "SWAP";
+                break;
+            case COUNT:
+                result = "COUNT";
+                break;
+        }
+        return result;
     }
 
     public double eval(double [] operandes) {
@@ -61,13 +80,25 @@ public enum Operation {
                 break;
             case "IF":
                 result = (operandes[0] == 0) ? operandes[1] : operandes[2];
+                break;
         }
         return result;
     }
 
     public void execute(Stack<Double> pile){
         if(arite != 0){
+            Double tab[] = new Double[arite];
+            for(int i = 0; i < getArite(); i++){
+                double operande = pile.pop();
+                tab[i] = operande;
+                pile.add(operande);
+            }
+        }
+        else {
+            switch(code()){
+                case "DROP":
 
+            }
         }
     }
 }
