@@ -27,7 +27,7 @@ public class Calculatrice {
                 for(int i = 0; i < o.getArite(); i++) {
                     operandes[i] = resultat.pop();
                 }
-                double result = operations.get(element).eval(operandes);
+                double result = o.eval(operandes);
                 resultat.add(result);
             }
             else {

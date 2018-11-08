@@ -23,12 +23,7 @@ public class Calculatrice {
             String element = st.nextToken();
             if(operations.containsKey(element)) {
                 Operation o =  operations.get(element);
-                double [] operandes = new double[o.getArite()];
-                for(int i = 0; i < o.getArite(); i++) {
-                    operandes[i] = resultat.pop();
-                }
-                double result = operations.get(element).eval(operandes);
-                resultat.add(result);
+                o.execute(resultat);
             }
             else {
                 resultat.add(new Double(element));

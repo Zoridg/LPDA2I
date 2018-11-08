@@ -10,10 +10,5 @@ public class Calculer {
                 e.printStackTrace();
             }
         }
-//        try {
-//
-//	    } catch (CalculatriceException e) {
-//            System.out.println(e.getMessage()) ;
-//	    }
     }
 }
