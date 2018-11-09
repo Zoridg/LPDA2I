@@ -1,0 +1,49 @@
+Histoire d'Unix :
+1970 : machines complexes, besoin de partager le travail entre les développeurs. 
+Machines plus puissantes, apparition des terminaux
+Unix de nos jours les plus connus : Linux, Noyau MacOS, Free BSD
+
+Philosophie d'Unix : 
+Shell langage très simple, petites commandes mais combinaisons très nombreuses
+
+Caractéristiques :
+- multi-tâches : asynchronicité, time-sharing
+- multi-utilisateurs : système de droits, permissions, partage de ressource en terme de protection et 
+non de temps
+Terminal : entrée/sortie
+
+Architecture Unix :
+Architecture logicielle en couche
+Privilèges des gestionnaires de périphériques et appels systèmes (superuser du matériel qui accède à tout)
+Ordonnanceur : chef d'orchestre qui gère les processus un par un, et donne la main
+norme POSIX : liste des appels système disponibles sur un noyau
+
+En unix, tout est fichier :
+types de fichiers : 
+- catalogues : liste de fichiers
+- lien symbolique : fonctionne comme un raccourci
+- spéciaux : fichiers blocs (ecrire par blocs) / fichier caractères (écrire par caractère, comme le terminal)
+- tubes
+- sockets
+- ordinaires (ou reguliers : fichiers classiques)
+
+Utilisateurs/Groupes :
+Chaque processus éxécuté pour un utilisateur appliqueront les droits de l'utilisateur
+umask utilise la base octale, tout comme le chmod. Le chmod applique les droits par ajout de droits, 
+tandis que le umask les applique par suppression de droits
+
+Toujours protéger les variables qui contiennent des noms de fichiers (surtout pour les fichiers avec espaces)
+Pour une boucle : Utiliser les back-quotes "" 
+	ex : 
+	for i in "$*"
+	for i in "$@"
+
+S'applique aussi au IF
+	ex :
+	if test $1 = -l    ===>  if test "$1" = -l 
+	then
+		echo liste
+	else
+		echo pas liste
+	fi
+
